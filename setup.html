@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Guide — Align Momentum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #002366;
+    --horizon: #3A6DB5;
+    --mist: #D6E4F5;
+    --fog: #F0F4F9;
+    --dark: #1A1A1A;
+    --white: #FFFFFF;
+    --danger: #B3261E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--fog);
+    color: var(--dark);
+  }
+  a { color: var(--horizon); }
+
+  header.top {
+    background: var(--ocean);
+    color: var(--white);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header.top .brand-link { text-decoration: none; color: var(--white); display: flex; align-items: baseline; gap: 10px; }
+  header.top .brand { font-size: 20px; font-weight: 600; }
+  header.top .brand span { color: var(--mist); font-weight: 300; }
+  header.top .back {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  header.top .back:hover { color: var(--mist); }
+
+  .hero {
+    background: var(--ocean);
+    color: var(--white);
+    padding: 48px 24px 56px;
+  }
+  .hero-inner { max-width: 720px; margin: 0 auto; }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 12px;
+  }
+  .hero h1 { font-size: 34px; font-weight: 700; margin: 0 0 14px; }
+  .hero p { font-size: 16px; line-height: 1.6; color: var(--mist); margin: 0; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 40px 24px 90px; }
+
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 22px;
+    border: 1px solid var(--mist);
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--ocean);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ocean);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .card p { font-size: 15px; line-height: 1.7; color: #333; margin: 0 0 12px; }
+  .card ol, .card ul { margin: 0 0 12px; padding-left: 22px; font-size: 15px; line-height: 1.8; color: #333; }
+  .card ol li, .card ul li { margin-bottom: 4px; }
+  code.inline {
+    background: var(--fog);
+    border: 1px solid var(--mist);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 13px;
+  }
+  pre {
+    background: #0d1b3a;
+    color: #e4ecf7;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+  .note {
+    background: var(--fog);
+    border-left: 3px solid var(--horizon);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 12px;
+  }
+  .warn {
+    background: #FDF1F0;
+    border-left: 3px solid var(--danger);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 12px;
+  }
+  .warn strong { color: var(--danger); }
+  a.btn {
+    display: inline-block;
+    background: var(--horizon);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  a.btn:hover { background: #2f5c9c; }
+
+  .final-cta {
+    text-align: center;
+    padding: 20px 0 0;
+  }
+  .final-cta a.btn { padding: 14px 28px; font-size: 15px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand-link" href="index.html">
+    <div class="brand">Align<span> Momentum</span></div>
+  </a>
+  <a class="back" href="app.html">← Back to the app</a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Setup guide</div>
+    <h1>Get set up in about 10 minutes</h1>
+    <p>Nothing to install. You'll need a Google account and an Anthropic API key. Your data lives in a Google Sheet you own — Align Momentum never sees or stores it.</p>
+  </div>
+</section>
+
+<main>
+
+  <div class="card">
+    <h2><span class="step-num">1</span> Create your Google Sheet</h2>
+    <p>Go to <a href="https://sheets.google.com" target="_blank">sheets.google.com</a> and create a new blank spreadsheet. This is where all your board updates, briefings, and log entries will live.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">2</span> Rename the tab to "Log"</h2>
+    <p>At the bottom of the sheet, right-click the "Sheet1" tab, choose Rename, and type exactly:</p>
+    <pre>Log</pre>
+    <p>The tab name must be exactly "Log" with a capital L. If it's spelled differently, the app won't be able to read or write to it.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">3</span> Add the Apps Script</h2>
+    <p>In your Google Sheet, click <strong>Extensions &gt; Apps Script</strong>. A new tab opens with a code editor. Select all of the placeholder code (Ctrl+A / Cmd+A) and delete it, then paste in the code below:</p>
+    <pre>function doGet(e) { return handleRequest(e); }
+
+function doPost(e) {
+  var p = JSON.parse(e.postData.contents);
+  return handleAction(p);
+}
+
+function handleRequest(e) {
+  var p = e.parameter;
+  return handleAction(p);
+}
+
+function handleAction(p) {
+  var out = {};
+
+  if (p.action === "headers") {
+    out = { headers: ["ID","Date","Type","Audience","Title",
+      "Content","Status","Tags","AddedAt","Notes"] };
+
+  } else if (p.action === "read") {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName("Log");
+    var rows = sheet.getDataRange().getValues();
+    out = { rows: rows };
+
+  } else if (p.action === "append") {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName("Log");
+    var row = JSON.parse(p.row);
+    sheet.appendRow(row);
+    out = { success: true };
+
+  } else if (p.action === "update") {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName("Log");
+    sheet.getRange(parseInt(p.row), parseInt(p.col)).setValue(p.value);
+    out = { success: true };
+
+  } else if (p.action === "clear") {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName("Log");
+    sheet.getRange(parseInt(p.row), 1, 1, 10).clearContent();
+    out = { success: true };
+
+  } else if (p.action === "ai_suggest") {
+    var apiKey = p.apiKey;
+    var prompt = p.prompt;
+    if (!apiKey || !prompt) {
+      out = { error: "Missing apiKey or prompt" };
+    } else {
+      var payload = JSON.stringify({
+        model: "claude-sonnet-5",
+        max_tokens: 8000,
+        messages: [{ role: "user", content: prompt }]
+      });
+      var options = {
+        method: "post",
+        contentType: "application/json",
+        headers: { "x-api-key": apiKey,
+          "anthropic-version": "2023-06-01" },
+        payload: payload,
+        muteHttpExceptions: true
+      };
+      try {
+        var resp = UrlFetchApp.fetch(
+          "https://api.anthropic.com/v1/messages", options);
+        var result = JSON.parse(resp.getContentText());
+        if (result.content && result.content[0]) {
+          out = { suggestion: result.content[0].text };
+        } else if (result.error) {
+          out = { error: result.error.message || "API error" };
+        } else {
+          out = { error: "No response from AI" };
+        }
+      } catch(err) {
+        out = { error: err.message };
+      }
+    }
+
+  } else {
+    out = { error: "unknown action" };
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify(out))
+    .setMimeType(ContentService.MimeType.JSON);
+}</pre>
+    <p>Save with Ctrl+S / Cmd+S. The file should show as <code class="inline">Code.gs</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">4</span> Deploy as a web app</h2>
+    <p>Click the blue <strong>Deploy</strong> button (top right), then <strong>New deployment</strong>. Click the gear icon next to "Select type" and choose <strong>Web app</strong>. Set:</p>
+    <ul>
+      <li><strong>Execute as:</strong> Me</li>
+      <li><strong>Who has access:</strong> Anyone</li>
+    </ul>
+    <div class="warn"><strong>This part matters:</strong> "Who has access" must be set to <strong>Anyone</strong> — not "Anyone with Google account." That option looks similar but silently blocks the app from connecting, since it requires a signed-in Google session that the browser can't provide.</div>
+    <p>Click Deploy, then <strong>Authorize access</strong>. You'll see a "Google hasn't verified this app" warning — this is expected since it's your own script. Click Advanced, then "Go to (project name) (unsafe)," then Allow.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">5</span> Copy the web app URL</h2>
+    <p>After authorizing, you'll see a URL like:</p>
+    <pre>https://script.google.com/macros/s/XXXXXXXXXX/exec</pre>
+    <p>Click Copy next to it. If you ever need to find it again, it's under <strong>Deploy &gt; Manage deployments</strong> in the Apps Script editor.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">6</span> Get an Anthropic API key</h2>
+    <p>Align Momentum calls Anthropic's API directly from your browser with your own key — there's no Align Momentum account to create.</p>
+    <ol>
+      <li>Go to <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> and sign up, or log in if you already have an account.</li>
+      <li>Go to Settings → API Keys (or the "API Keys" link in the left sidebar).</li>
+      <li>Click <strong>Create Key</strong>, give it a name (e.g. "Align Momentum"), and click <strong>Create</strong>.</li>
+      <li>Copy the key that appears. It starts with <code class="inline">sk-ant-</code>. This is the only time the full key is shown, so copy it now.</li>
+    </ol>
+    <div class="note"><strong>Note:</strong> New Anthropic accounts typically include a small amount of free trial credit, but exact amounts and terms can change — check <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a> for current details. After any trial credit is used, drafting and consistency checks are billed per use, typically a few cents each.</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step-num">7</span> Connect the app</h2>
+    <p>Go back to Align Momentum, paste your Web App URL and Anthropic API key into the setup screen, and click "Connect my sheet." You can add or update your API key any time in Settings.</p>
+  </div>
+
+  <div class="card">
+    <h2>Troubleshooting</h2>
+    <p><strong>"Could not connect" error</strong></p>
+    <ul>
+      <li>Check that "Who has access" is set to Anyone, not "Anyone with Google account" (see step 4).</li>
+      <li>Make sure you copied the full Web App URL, including <code class="inline">/exec</code> at the end.</li>
+      <li>Confirm the sheet tab is named exactly <code class="inline">Log</code>.</li>
+      <li>If you edited the script after deploying, redeploy: Deploy &gt; Manage deployments &gt; pencil icon &gt; New version &gt; Deploy.</li>
+    </ul>
+    <p><strong>AI drafting isn't working</strong></p>
+    <ul>
+      <li>Your Anthropic API key must start with <code class="inline">sk-ant-</code>.</li>
+      <li>Add or update your key any time in Settings (top right of the app once connected).</li>
+    </ul>
+  </div>
+
+  <div class="final-cta">
+    <a class="btn" href="app.html">Back to Align Momentum →</a>
+  </div>
+
+</main>
+
+</body>
+</html>
