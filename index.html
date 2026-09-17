@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Align Momentum</title>
+<title>Align Momentum: Say it once. Mean it everywhere.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -14,90 +14,16 @@
     --fog: #F0F4F9;
     --dark: #1A1A1A;
     --white: #FFFFFF;
-    --danger: #B3261E;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
-    background: var(--fog);
+    background: var(--white);
     color: var(--dark);
   }
-  a { color: var(--horizon); }
+  a { color: inherit; }
 
-  /* ---------- Setup screen ---------- */
-  #setup-screen {
-    min-height: calc(100vh - 65px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-  .setup-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 40px;
-    max-width: 460px;
-    width: 100%;
-    box-shadow: 0 8px 30px rgba(0,35,102,0.08);
-  }
-  .setup-card h1 {
-    color: var(--ocean);
-    font-size: 28px;
-    font-weight: 600;
-    margin: 0 0 6px;
-  }
-  .setup-card p.sub {
-    color: #5F5E5A;
-    font-size: 15px;
-    margin: 0 0 28px;
-  }
-  label {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ocean);
-    margin-bottom: 6px;
-  }
-  input[type=text], input[type=password], textarea, select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--mist);
-    border-radius: 8px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
-    margin-bottom: 18px;
-    background: var(--fog);
-    color: var(--dark);
-  }
-  textarea { resize: vertical; min-height: 90px; }
-  input:focus, textarea:focus, select:focus {
-    outline: 2px solid var(--horizon);
-    outline-offset: 1px;
-    background: var(--white);
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: none;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .btn-primary { background: var(--horizon); color: var(--white); width: 100%; }
-  .btn-primary:hover { background: var(--ocean); }
-  .btn-secondary { background: var(--fog); color: var(--ocean); border: 1px solid var(--mist); }
-  .btn-secondary:hover { background: var(--mist); }
-  .btn-text { background: none; color: var(--horizon); padding: 8px 4px; text-decoration: underline; }
-  .hint { font-size: 13px; color: #7A7A7A; margin: -12px 0 18px; }
-
-  /* ---------- App shell ---------- */
-  #app { display: none; }
   header.top {
     background: var(--ocean);
     color: var(--white);
@@ -106,803 +32,207 @@
     align-items: center;
     justify-content: space-between;
   }
-  header.top .brand {
-    font-size: 20px;
-    font-weight: 600;
-  }
+  header.top .brand-link { text-decoration: none; color: var(--white); }
+  header.top .brand { font-size: 20px; font-weight: 600; }
   header.top .brand span { color: var(--mist); font-weight: 300; }
-  header.top button {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.4);
+  header.top .tagline { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist); margin-top: 2px; }
+  header.top .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--horizon);
     color: var(--white);
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-family: inherit;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 100px;
     font-size: 13px;
-    cursor: pointer;
-  }
-
-  nav.tabs {
-    display: flex;
-    background: var(--white);
-    border-bottom: 1px solid var(--mist);
-    padding: 0 20px;
-    overflow-x: auto;
-  }
-  nav.tabs button {
-    background: none;
-    border: none;
-    padding: 16px 18px;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 500;
-    color: #6B7280;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     white-space: nowrap;
   }
-  nav.tabs button.active {
-    color: var(--ocean);
-    border-bottom-color: var(--horizon);
-  }
+  header.top .cta:hover { background: #2f5c9c; }
 
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
+  .hero {
+    background: var(--ocean);
+    color: var(--white);
+    text-align: center;
+    padding: 72px 24px 90px;
   }
-  .panel { display: none; }
-  .panel.active { display: block; }
-
-  .panel h2 {
-    color: var(--ocean);
-    font-size: 24px;
+  .eyebrow {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
     font-weight: 600;
-    margin: 0 0 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 28px;
   }
-  .panel p.desc {
-    color: #5F5E5A;
-    font-size: 15px;
-    margin: 0 0 24px;
+  .hero h1 {
+    font-size: 44px;
+    line-height: 1.25;
+    font-weight: 700;
+    max-width: 880px;
+    margin: 0 auto 20px;
   }
-
-  .card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 20px;
-    border: 1px solid var(--mist);
+  .hero .sub {
+    font-style: italic;
+    font-size: 20px;
+    color: var(--mist);
+    margin: 0 0 28px;
   }
-
-  .row2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 28px;
   }
-  @media (max-width: 600px) {
-    .row2 { grid-template-columns: 1fr; }
+  .hero p.desc {
+    max-width: 620px;
+    margin: 0 auto 36px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mist);
   }
-
-  .output-box {
-    background: var(--fog);
-    border: 1px solid var(--mist);
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
     border-radius: 8px;
-    padding: 16px;
-    white-space: pre-wrap;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--horizon); color: var(--white); }
+  .btn-primary:hover { background: #2f5c9c; }
+  .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+  .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+  main.features {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+  main.features h2 {
+    text-align: center;
+    color: var(--ocean);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  main.features p.lead {
+    text-align: center;
+    color: #5F5E5A;
+    max-width: 560px;
+    margin: 0 auto 48px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 700px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+  }
+  .feature-card {
+    background: var(--fog);
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid var(--mist);
+  }
+  .feature-card h3 {
+    color: var(--ocean);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .feature-card p {
+    color: #4A5568;
     font-size: 15px;
     line-height: 1.6;
-    min-height: 60px;
-  }
-  .output-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 14px;
+    margin: 0;
   }
 
-  .spinner {
-    display: inline-block;
-    width: 16px; height: 16px;
-    border: 2px solid rgba(255,255,255,0.4);
-    border-top-color: var(--white);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .status-msg { font-size: 14px; margin-top: 10px; }
-  .status-msg.error { color: var(--danger); }
-  .status-msg.ok { color: #1E7A3E; }
-
-  /* Log table */
-  table.log {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--mist);
-  }
-  table.log th {
+  footer {
     background: var(--fog);
-    text-align: left;
-    padding: 12px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ocean);
-    border-bottom: 1px solid var(--mist);
-  }
-  table.log td {
-    padding: 12px 14px;
-    font-size: 14px;
-    border-bottom: 1px solid var(--fog);
-    vertical-align: top;
-  }
-  table.log tr:last-child td { border-bottom: none; }
-  .pill {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 500;
-    background: var(--mist);
-    color: var(--ocean);
-  }
-  .pill.status-sent { background: #DCF3E4; color: #1E7A3E; }
-  .pill.status-draft { background: var(--fog); color: #6B7280; }
-  .log-content-preview {
-    max-width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #6B7280;
-  }
-  .log-filters {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 18px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .log-filters select { width: auto; margin-bottom: 0; }
-  .log-empty {
     text-align: center;
-    padding: 50px 20px;
-    color: #6B7280;
-  }
-  .link-btn {
-    background: none;
-    border: none;
-    color: var(--horizon);
-    font-family: inherit;
+    padding: 32px 24px;
     font-size: 13px;
-    cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
-    margin-right: 12px;
+    color: #6B7280;
+    border-top: 1px solid var(--mist);
   }
-  .link-btn.danger { color: var(--danger); }
-
-  dialog {
-    border: none;
-    border-radius: 12px;
-    padding: 0;
-    max-width: 480px;
-    width: 90%;
-  }
-  dialog::backdrop { background: rgba(0,35,102,0.4); }
-  .modal-body { padding: 28px; }
-  .modal-body h3 { margin: 0 0 18px; color: var(--ocean); }
+  footer a { color: var(--horizon); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="brand">Align<span> Momentum</span></div>
-  <button id="header-settings-btn" onclick="openSettings()" style="display:none;">Settings</button>
+  <a class="brand-link" href="index.html">
+    <div class="brand">Align<span> Momentum</span></div>
+    <div class="tagline">Say it once. Mean it everywhere.</div>
+  </a>
+  <a class="cta" href="app.html">Launch the app →</a>
 </header>
 
-<!-- ============ SETUP SCREEN ============ -->
-<div id="setup-screen">
-  <div class="setup-card">
-    <h1>Align Momentum</h1>
-    <p class="sub">Board updates, stakeholder briefings, and message consistency checks — connected to your own Google Sheet.</p>
-
-    <label for="gas-url">Google Apps Script Web App URL</label>
-    <input type="text" id="gas-url" placeholder="https://script.google.com/macros/s/.../exec">
-
-    <label for="api-key">Anthropic API Key</label>
-    <input type="password" id="api-key" placeholder="sk-ant-...">
-    <p class="hint">Needed for AI drafting and the consistency checker. You can add or update this later in Settings.</p>
-
-    <button class="btn btn-primary" onclick="connectSheet()">Connect my sheet</button>
-    <p class="status-msg" id="setup-status"></p>
+<section class="hero">
+  <div class="eyebrow">Built for comms teams of one</div>
+  <h1>Your internal story and your public one shouldn't read like two different organizations.</h1>
+  <p class="sub">Say it once. Mean it everywhere.</p>
+  <div class="badge">★ AI powered by Claude</div>
+  <p class="desc">Board updates, stakeholder briefings, and message consistency checks — drafted fast and saved to your own Google Sheet, so what you tell your team actually matches what you tell the world.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="app.html">Launch the app →</a>
+    <a class="btn btn-outline" href="setup.html">See how it works</a>
   </div>
-</div>
+</section>
 
-<!-- ============ APP ============ -->
-<div id="app">
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="board" onclick="switchTab('board')">Board Update</button>
-    <button class="tab-btn" data-tab="briefing" onclick="switchTab('briefing')">Stakeholder Briefing</button>
-    <button class="tab-btn" data-tab="check" onclick="switchTab('check')">Consistency Check</button>
-    <button class="tab-btn" data-tab="log" onclick="switchTab('log')">Communication Log</button>
-  </nav>
-
-  <main>
-
-    <!-- ---------------- BOARD UPDATE ---------------- -->
-    <section class="panel active" id="panel-board">
-      <h2>Board Update Generator</h2>
-      <p class="desc">Turn your metrics, wins, and open issues into a board-ready update.</p>
-      <div class="card">
-        <label for="b-period">Reporting period</label>
-        <input type="text" id="b-period" placeholder="e.g. Q3 2026, or September 2026">
-
-        <label for="b-wins">Key wins and metrics</label>
-        <textarea id="b-wins" placeholder="e.g. Raised $180K toward the $250K fall goal; launched the volunteer portal; media coverage in three local outlets"></textarea>
-
-        <label for="b-challenges">Challenges or open risks</label>
-        <textarea id="b-challenges" placeholder="e.g. Behind on the facilities campaign; two board seats still vacant"></textarea>
-
-        <label for="b-priorities">Upcoming priorities</label>
-        <textarea id="b-priorities" placeholder="e.g. Finalize the annual gala date, hire the new program director"></textarea>
-
-        <label for="b-tone">Tone</label>
-        <select id="b-tone">
-          <option value="formal">Formal and measured</option>
-          <option value="warm">Warm and direct</option>
-        </select>
-
-        <button class="btn btn-primary" id="b-generate" onclick="generateBoardUpdate()">Generate draft</button>
-        <p class="status-msg" id="b-status"></p>
-      </div>
-
-      <div class="card" id="b-output-card" style="display:none;">
-        <label>Draft</label>
-        <textarea class="output-box" id="b-output" style="min-height:220px;"></textarea>
-        <div class="output-actions">
-          <button class="btn btn-secondary" onclick="copyOutput('b-output')">Copy</button>
-          <button class="btn btn-secondary" onclick="saveToLog('Board Update','Board','b-period','b-output')">Save to log</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------------- BRIEFING ---------------- -->
-    <section class="panel" id="panel-briefing">
-      <h2>Stakeholder Briefing</h2>
-      <p class="desc">Draft the right message for the right audience, in the right format.</p>
-      <div class="card">
-        <label for="br-type">Briefing type</label>
-        <select id="br-type">
-          <option value="Staff Announcement">Staff announcement</option>
-          <option value="Volunteer Update">Volunteer update</option>
-          <option value="Funder Briefing">Funder briefing</option>
-          <option value="Board Packet Summary">Board packet summary</option>
-        </select>
-
-        <label for="br-topic">Topic</label>
-        <input type="text" id="br-topic" placeholder="e.g. New office relocation, program expansion to a second site">
-
-        <label for="br-points">Key points to include</label>
-        <textarea id="br-points" placeholder="e.g. Move happens Nov 1, no service disruption expected, new address, who to contact with questions"></textarea>
-
-        <label for="br-deadline">Timing or deadline (optional)</label>
-        <input type="text" id="br-deadline" placeholder="e.g. Needs to go out by Friday">
-
-        <button class="btn btn-primary" id="br-generate" onclick="generateBriefing()">Draft briefing</button>
-        <p class="status-msg" id="br-status"></p>
-      </div>
-
-      <div class="card" id="br-output-card" style="display:none;">
-        <label>Draft</label>
-        <textarea class="output-box" id="br-output" style="min-height:220px;"></textarea>
-        <div class="output-actions">
-          <button class="btn btn-secondary" onclick="copyOutput('br-output')">Copy</button>
-          <button class="btn btn-secondary" onclick="saveBriefingToLog()">Save to log</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------------- CONSISTENCY CHECK ---------------- -->
-    <section class="panel" id="panel-check">
-      <h2>Message Consistency Checker</h2>
-      <p class="desc">Paste what you're telling your internal team and what you're telling the outside world on the same topic — see where they drift apart.</p>
-      <div class="card">
-        <label for="c-topic">Topic (optional)</label>
-        <input type="text" id="c-topic" placeholder="e.g. The layoffs, the new strategic plan">
-
-        <div class="row2">
-          <div>
-            <label for="c-internal">Internal message</label>
-            <textarea id="c-internal" style="min-height:160px;" placeholder="What staff, board, or volunteers are being told"></textarea>
-          </div>
-          <div>
-            <label for="c-external">External message</label>
-            <textarea id="c-external" style="min-height:160px;" placeholder="What donors, media, or the public are being told"></textarea>
-          </div>
-        </div>
-
-        <button class="btn btn-primary" id="c-generate" onclick="generateCheck()">Check consistency</button>
-        <p class="status-msg" id="c-status"></p>
-      </div>
-
-      <div class="card" id="c-output-card" style="display:none;">
-        <label>Analysis</label>
-        <div class="output-box" id="c-output"></div>
-        <div class="output-actions">
-          <button class="btn btn-secondary" onclick="copyOutputDiv('c-output')">Copy</button>
-          <button class="btn btn-secondary" onclick="saveCheckToLog()">Save to log</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ---------------- LOG ---------------- -->
-    <section class="panel" id="panel-log">
-      <h2>Communication Log</h2>
-      <p class="desc">Everything you've drafted and sent, in one place.</p>
-
-      <div class="log-filters">
-        <select id="log-filter-type" onchange="renderLog()">
-          <option value="">All types</option>
-          <option value="Board Update">Board Update</option>
-          <option value="Staff Announcement">Staff Announcement</option>
-          <option value="Volunteer Update">Volunteer Update</option>
-          <option value="Funder Briefing">Funder Briefing</option>
-          <option value="Board Packet Summary">Board Packet Summary</option>
-          <option value="Consistency Check">Consistency Check</option>
-          <option value="Manual">Manual</option>
-        </select>
-        <button class="btn btn-secondary" onclick="loadLog()">Refresh</button>
-        <button class="btn btn-secondary" onclick="openAddEntry()">Add manual entry</button>
-      </div>
-
-      <div id="log-table-wrap">
-        <p class="log-empty">Loading&hellip;</p>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<!-- ============ SETTINGS MODAL ============ -->
-<dialog id="settings-modal">
-  <div class="modal-body">
-    <h3>Settings</h3>
-    <label for="s-gas-url">Google Apps Script Web App URL</label>
-    <input type="text" id="s-gas-url">
-    <label for="s-api-key">Anthropic API Key</label>
-    <input type="password" id="s-api-key">
-    <div class="output-actions">
-      <button class="btn btn-primary" onclick="saveSettings()">Save</button>
-      <button class="btn btn-secondary" onclick="document.getElementById('settings-modal').close()">Cancel</button>
+<main class="features">
+  <h2>Four tools, one communications record</h2>
+  <p class="lead">Everything you draft gets saved to a communication log in your own Google Sheet, so nothing lives only in a chat window.</p>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>Board Update Generator</h3>
+      <p>Turn your wins, challenges, and priorities into a board-ready update, in a formal or warm tone.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Stakeholder Briefing</h3>
+      <p>Draft staff announcements, volunteer updates, funder briefings, or board packet summaries, tuned to the audience.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Message Consistency Checker</h3>
+      <p>Paste your internal and external messaging on the same topic and see exactly where they drift apart.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Communication Log</h3>
+      <p>Every draft, saved with its date, audience, and status, so you always know what's been sent and what's still a draft.</p>
     </div>
   </div>
-</dialog>
+</main>
 
-<!-- ============ ADD ENTRY MODAL ============ -->
-<dialog id="entry-modal">
-  <div class="modal-body">
-    <h3>Add log entry</h3>
-    <label for="e-type">Type</label>
-    <select id="e-type">
-      <option>Board Update</option>
-      <option>Staff Announcement</option>
-      <option>Volunteer Update</option>
-      <option>Funder Briefing</option>
-      <option>Board Packet Summary</option>
-      <option>Consistency Check</option>
-      <option selected>Manual</option>
-    </select>
-    <label for="e-audience">Audience</label>
-    <input type="text" id="e-audience" placeholder="e.g. Board, Staff, Donors">
-    <label for="e-title">Title</label>
-    <input type="text" id="e-title" placeholder="e.g. September board update">
-    <label for="e-status">Status</label>
-    <select id="e-status">
-      <option>Draft</option>
-      <option>Sent</option>
-    </select>
-    <label for="e-notes">Notes (optional)</label>
-    <textarea id="e-notes" style="min-height:60px;"></textarea>
-    <div class="output-actions">
-      <button class="btn btn-primary" onclick="submitManualEntry()">Save entry</button>
-      <button class="btn btn-secondary" onclick="document.getElementById('entry-modal').close()">Cancel</button>
-    </div>
-  </div>
-</dialog>
+<footer>
+  Built by <a href="https://plainspeakingcomms.com" target="_blank">Plain Speaking Communications</a> · AI powered by Claude · Your data lives in your own Google Sheet.
+</footer>
 
-<script>
-/* ================= State ================= */
-let GAS_URL = localStorage.getItem('am_gas_url') || '';
-let API_KEY = localStorage.getItem('am_api_key') || '';
-let logRows = []; // cached sheet rows (excluding header), each with ._rowNum for sheet row index
-
-/* ================= Setup / Settings ================= */
-window.addEventListener('DOMContentLoaded', () => {
-  if (GAS_URL) {
-    document.getElementById('setup-screen').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-    document.getElementById('header-settings-btn').style.display = 'inline-flex';
-    loadLog();
-  }
-});
-
-function connectSheet() {
-  const url = document.getElementById('gas-url').value.trim();
-  const key = document.getElementById('api-key').value.trim();
-  const statusEl = document.getElementById('setup-status');
-
-  if (!url) {
-    statusEl.textContent = 'Paste your Google Apps Script Web App URL to continue.';
-    statusEl.className = 'status-msg error';
-    return;
-  }
-
-  GAS_URL = url;
-  API_KEY = key;
-  localStorage.setItem('am_gas_url', GAS_URL);
-  localStorage.setItem('am_api_key', API_KEY);
-
-  statusEl.textContent = 'Connecting...';
-  statusEl.className = 'status-msg';
-
-  gasGet('read').then(res => {
-    if (res && res.rows) {
-      document.getElementById('setup-screen').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
-      document.getElementById('header-settings-btn').style.display = 'inline-flex';
-      loadLog();
-    } else {
-      statusEl.textContent = 'Could not connect. Check the URL and that the sheet has a "Log" tab.';
-      statusEl.className = 'status-msg error';
-    }
-  }).catch(() => {
-    statusEl.textContent = 'Could not connect. Check the URL and try again.';
-    statusEl.className = 'status-msg error';
-  });
-}
-
-function openSettings() {
-  document.getElementById('s-gas-url').value = GAS_URL;
-  document.getElementById('s-api-key').value = API_KEY;
-  document.getElementById('settings-modal').showModal();
-}
-
-function saveSettings() {
-  GAS_URL = document.getElementById('s-gas-url').value.trim();
-  API_KEY = document.getElementById('s-api-key').value.trim();
-  localStorage.setItem('am_gas_url', GAS_URL);
-  localStorage.setItem('am_api_key', API_KEY);
-  document.getElementById('settings-modal').close();
-  loadLog();
-}
-
-/* ================= Backend helpers ================= */
-function gasGet(action, params) {
-  params = params || {};
-  const qs = new URLSearchParams(Object.assign({ action }, params)).toString();
-  return fetch(`${GAS_URL}?${qs}`).then(r => r.json());
-}
-
-function gasPost(body) {
-  return fetch(GAS_URL, {
-    method: 'POST',
-    body: JSON.stringify(body)
-  }).then(r => r.json());
-}
-
-function callAI(prompt, statusElId, buttonElId) {
-  const statusEl = document.getElementById(statusElId);
-  const btn = document.getElementById(buttonElId);
-  if (!API_KEY) {
-    statusEl.textContent = 'Add your Anthropic API key in Settings to use AI drafting.';
-    statusEl.className = 'status-msg error';
-    return Promise.reject('no key');
-  }
-  btn.disabled = true;
-  const originalText = btn.textContent;
-  btn.innerHTML = '<span class="spinner"></span> Working...';
-  statusEl.textContent = '';
-  statusEl.className = 'status-msg';
-
-  return gasPost({ action: 'ai_suggest', apiKey: API_KEY, prompt })
-    .then(res => {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      if (res.error) {
-        statusEl.textContent = res.error;
-        statusEl.className = 'status-msg error';
-        throw new Error(res.error);
-      }
-      return res.suggestion;
-    })
-    .catch(err => {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      if (!statusEl.textContent) {
-        statusEl.textContent = 'Something went wrong. Try again.';
-        statusEl.className = 'status-msg error';
-      }
-      throw err;
-    });
-}
-
-/* ================= Tabs ================= */
-function switchTab(name) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + name).classList.add('active');
-  if (name === 'log') loadLog();
-}
-
-/* ================= Board Update ================= */
-function generateBoardUpdate() {
-  const period = document.getElementById('b-period').value.trim();
-  const wins = document.getElementById('b-wins').value.trim();
-  const challenges = document.getElementById('b-challenges').value.trim();
-  const priorities = document.getElementById('b-priorities').value.trim();
-  const tone = document.getElementById('b-tone').value;
-
-  if (!wins && !challenges && !priorities) {
-    const statusEl = document.getElementById('b-status');
-    statusEl.textContent = 'Add at least one of: wins, challenges, or priorities.';
-    statusEl.className = 'status-msg error';
-    return;
-  }
-
-  const prompt = `You are helping a nonprofit communications director draft a board update. Write a clear, well-organized board-ready update in a ${tone === 'formal' ? 'formal and measured' : 'warm and direct'} tone.
-
-Reporting period: ${period || 'not specified'}
-
-Key wins and metrics:
-${wins || 'none provided'}
-
-Challenges or open risks:
-${challenges || 'none provided'}
-
-Upcoming priorities:
-${priorities || 'none provided'}
-
-Structure the update with clear sections (e.g. Highlights, Challenges, What's Next). Do not invent numbers or facts that were not provided. Keep it concise enough for a board packet. Return only the update text, no preamble.`;
-
-  callAI(prompt, 'b-status', 'b-generate').then(text => {
-    document.getElementById('b-output').value = text.trim();
-    document.getElementById('b-output-card').style.display = 'block';
-  }).catch(() => {});
-}
-
-/* ================= Briefing ================= */
-function generateBriefing() {
-  const type = document.getElementById('br-type').value;
-  const topic = document.getElementById('br-topic').value.trim();
-  const points = document.getElementById('br-points').value.trim();
-  const deadline = document.getElementById('br-deadline').value.trim();
-
-  if (!topic && !points) {
-    const statusEl = document.getElementById('br-status');
-    statusEl.textContent = 'Add a topic or key points to draft from.';
-    statusEl.className = 'status-msg error';
-    return;
-  }
-
-  const audienceNote = {
-    'Staff Announcement': 'internal staff at all levels; be clear and direct, address likely questions',
-    'Volunteer Update': 'active volunteers; warm and appreciative, focused on what changes for them',
-    'Funder Briefing': 'institutional and major-gift funders; professional, outcomes-focused, no jargon',
-    'Board Packet Summary': 'the board of directors; concise, governance-relevant framing'
-  }[type];
-
-  const prompt = `You are helping a nonprofit communications director draft a ${type}. The audience is ${audienceNote}.
-
-Topic: ${topic || 'not specified'}
-
-Key points to include:
-${points || 'none provided'}
-
-${deadline ? `Timing note: ${deadline}` : ''}
-
-Write a complete, ready-to-send draft appropriate to this audience and format. Do not invent facts not provided. Return only the draft text, no preamble.`;
-
-  callAI(prompt, 'br-status', 'br-generate').then(text => {
-    document.getElementById('br-output').value = text.trim();
-    document.getElementById('br-output-card').style.display = 'block';
-  }).catch(() => {});
-}
-
-function saveBriefingToLog() {
-  const type = document.getElementById('br-type').value;
-  const topic = document.getElementById('br-topic').value.trim() || type;
-  const audience = {
-    'Staff Announcement': 'Staff',
-    'Volunteer Update': 'Volunteers',
-    'Funder Briefing': 'Funders',
-    'Board Packet Summary': 'Board'
-  }[type];
-  saveEntryToLog(type, audience, topic, document.getElementById('br-output').value, 'br-status');
-}
-
-/* ================= Consistency Check ================= */
-function generateCheck() {
-  const topic = document.getElementById('c-topic').value.trim();
-  const internal = document.getElementById('c-internal').value.trim();
-  const external = document.getElementById('c-external').value.trim();
-
-  if (!internal || !external) {
-    const statusEl = document.getElementById('c-status');
-    statusEl.textContent = 'Paste both an internal and an external message to compare.';
-    statusEl.className = 'status-msg error';
-    return;
-  }
-
-  const prompt = `Compare these two messages on the same topic${topic ? ` (topic: ${topic})` : ''} — one sent internally, one sent externally. Identify specific points where they contradict, diverge in facts or tone, or could confuse someone who saw both.
-
-INTERNAL MESSAGE:
-${internal}
-
-EXTERNAL MESSAGE:
-${external}
-
-Return your analysis as:
-1. A one-line overall verdict (Aligned / Minor differences / Significant divergence)
-2. A bulleted list of specific discrepancies found (quote the relevant phrase from each side). If none, say so plainly.
-3. A short suggestion for how to reconcile any real divergences.
-
-Be specific and concrete. Do not soften real contradictions. Return only the analysis, no preamble.`;
-
-  callAI(prompt, 'c-status', 'c-generate').then(text => {
-    document.getElementById('c-output').textContent = text.trim();
-    document.getElementById('c-output-card').style.display = 'block';
-  }).catch(() => {});
-}
-
-function saveCheckToLog() {
-  const topic = document.getElementById('c-topic').value.trim() || 'Consistency check';
-  saveEntryToLog('Consistency Check', 'Internal vs External', topic, document.getElementById('c-output').textContent, 'c-status');
-}
-
-/* ================= Generic save helpers ================= */
-function saveToLog(type, audience, titleFieldId, outputFieldId) {
-  const title = document.getElementById(titleFieldId).value.trim() || type;
-  const content = document.getElementById(outputFieldId).value;
-  saveEntryToLog(type, audience, title, content, 'b-status');
-}
-
-function saveEntryToLog(type, audience, title, content, statusElId) {
-  if (!content) return;
-  const now = new Date();
-  const row = [
-    'AM-' + now.getTime(),
-    now.toISOString().slice(0,10),
-    type,
-    audience,
-    title,
-    content,
-    'Draft',
-    '',
-    now.toISOString(),
-    ''
-  ];
-  gasPost({ action: 'append', row: JSON.stringify(row) }).then(res => {
-    const statusEl = document.getElementById(statusElId);
-    if (res.success) {
-      statusEl.textContent = 'Saved to communication log.';
-      statusEl.className = 'status-msg ok';
-    } else {
-      statusEl.textContent = 'Could not save to log.';
-      statusEl.className = 'status-msg error';
-    }
-  });
-}
-
-/* ================= Copy helpers ================= */
-function copyOutput(id) {
-  const el = document.getElementById(id);
-  navigator.clipboard.writeText(el.value);
-}
-function copyOutputDiv(id) {
-  const el = document.getElementById(id);
-  navigator.clipboard.writeText(el.textContent);
-}
-
-/* ================= Communication Log ================= */
-function loadLog() {
-  document.getElementById('log-table-wrap').innerHTML = '<p class="log-empty">Loading&hellip;</p>';
-  gasGet('read').then(res => {
-    if (!res || !res.rows) {
-      document.getElementById('log-table-wrap').innerHTML = '<p class="log-empty">Could not load the log. Check your connection in Settings.</p>';
-      return;
-    }
-    const rows = res.rows.slice(1); // drop header
-    logRows = rows.map((r, i) => ({
-      id: r[0], date: r[1], type: r[2], audience: r[3], title: r[4],
-      content: r[5], status: r[6], tags: r[7], addedAt: r[8], notes: r[9],
-      _rowNum: i + 2 // sheet row number (1-indexed, +1 for header)
-    })).filter(r => r.id); // skip cleared/blank rows
-    renderLog();
-  }).catch(() => {
-    document.getElementById('log-table-wrap').innerHTML = '<p class="log-empty">Could not load the log. Check your connection in Settings.</p>';
-  });
-}
-
-function renderLog() {
-  const filter = document.getElementById('log-filter-type').value;
-  const rows = filter ? logRows.filter(r => r.type === filter) : logRows;
-  const wrap = document.getElementById('log-table-wrap');
-
-  if (rows.length === 0) {
-    wrap.innerHTML = '<p class="log-empty">Nothing here yet. Drafts you save from the other tabs will show up here.</p>';
-    return;
-  }
-
-  const sorted = [...rows].sort((a, b) => (b.addedAt || '').localeCompare(a.addedAt || ''));
-
-  let html = '<table class="log"><thead><tr><th>Date</th><th>Type</th><th>Audience</th><th>Title</th><th>Status</th><th></th></tr></thead><tbody>';
-  sorted.forEach(r => {
-    html += `<tr>
-      <td>${escapeHtml(r.date)}</td>
-      <td><span class="pill">${escapeHtml(r.type)}</span></td>
-      <td>${escapeHtml(r.audience)}</td>
-      <td>${escapeHtml(r.title)}<div class="log-content-preview">${escapeHtml((r.content||'').slice(0,80))}</div></td>
-      <td><span class="pill ${r.status === 'Sent' ? 'status-sent' : 'status-draft'}">${escapeHtml(r.status)}</span></td>
-      <td>
-        <button class="link-btn" onclick="viewEntry('${r._rowNum}')">View</button>
-        <button class="link-btn" onclick="toggleStatus(${r._rowNum}, '${r.status}')">Mark ${r.status === 'Sent' ? 'Draft' : 'Sent'}</button>
-        <button class="link-btn danger" onclick="deleteEntry(${r._rowNum})">Delete</button>
-      </td>
-    </tr>`;
-  });
-  html += '</tbody></table>';
-  wrap.innerHTML = html;
-}
-
-function escapeHtml(s) {
-  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function viewEntry(rowNum) {
-  const r = logRows.find(x => x._rowNum == rowNum);
-  if (!r) return;
-  alert(`${r.title}\n\n${r.content}`);
-}
-
-function toggleStatus(rowNum, currentStatus) {
-  const newStatus = currentStatus === 'Sent' ? 'Draft' : 'Sent';
-  gasPost({ action: 'update', row: rowNum, col: 7, value: newStatus }).then(() => loadLog());
-}
-
-function deleteEntry(rowNum) {
-  if (!confirm('Delete this log entry? This cannot be undone.')) return;
-  gasPost({ action: 'clear', row: rowNum }).then(() => loadLog());
-}
-
-/* ---- Manual entry modal ---- */
-function openAddEntry() {
-  document.getElementById('e-audience').value = '';
-  document.getElementById('e-title').value = '';
-  document.getElementById('e-notes').value = '';
-  document.getElementById('entry-modal').showModal();
-}
-
-function submitManualEntry() {
-  const type = document.getElementById('e-type').value;
-  const audience = document.getElementById('e-audience').value.trim();
-  const title = document.getElementById('e-title').value.trim();
-  const status = document.getElementById('e-status').value;
-  const notes = document.getElementById('e-notes').value.trim();
-
-  if (!title) { alert('Add a title for this entry.'); return; }
-
-  const now = new Date();
-  const row = [
-    'AM-' + now.getTime(),
-    now.toISOString().slice(0,10),
-    type, audience, title, '', status, '', now.toISOString(), notes
-  ];
-  gasPost({ action: 'append', row: JSON.stringify(row) }).then(res => {
-    document.getElementById('entry-modal').close();
-    if (res.success) loadLog();
-  });
-}
-</script>
 </body>
 </html>
